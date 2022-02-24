@@ -29,7 +29,7 @@ public class NoteBook {
 			if(folder.equals(new Folder(folderName))) {
 				for(Note transNote : folder.getNotes()) {
 					if(note.equals(transNote)) {
-						System.out.println("Creating note "+ note.getTitle()+" under folder"+folderName+" failed");
+						System.out.println("Creating note "+ note.getTitle()+" under folder "+folderName+" failed");
 						return false;
 					}
 				}
