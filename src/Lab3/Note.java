@@ -17,6 +17,8 @@ public class Note implements Comparable<Note>{
 
 	@Override
 	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
 		if(!(obj instanceof Note))
 			return false;
 		Note other = (Note) obj;

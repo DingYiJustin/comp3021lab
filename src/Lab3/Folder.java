@@ -50,7 +50,7 @@ public class Folder implements Comparable<Folder>{
 			
 			//find current "ored" keywords
 			while(next != null && next.equals("or")) {
-				//System.out.println("next is or");
+			
 				i+=2;
 				current = splitedStrings[i];
 				currentStringsToFind.add(current);
@@ -69,8 +69,7 @@ public class Folder implements Comparable<Folder>{
 				if(currentNotes.get(j) instanceof ImageNote) {
 					System.out.println(currentNotes.get(j).getTitle());
 					for(String toFind : currentStringsToFind) {
-							contain = (currentNotes.get(j).getTitle().toLowerCase()).contains(toFind); //|| 
-									//currentNotes.get(j).getTitle().contains(toFind.toUpperCase());
+							contain = (currentNotes.get(j).getTitle().toLowerCase()).contains(toFind); 
 							if(contain)
 								break;
 					}
@@ -80,9 +79,7 @@ public class Folder implements Comparable<Folder>{
 						System.out.println(currentNotes.get(j));
 						System.out.println(toFind);
 						contain = (currentNotes.get(j).getTitle().toLowerCase()).contains(toFind) || 
-								//currentNotes.get(j).getTitle().contains(toFind.toUpperCase()) ||
 								(((TextNote)currentNotes.get(j)).content.toLowerCase()).contains(toFind)
-								//((TextNote)currentNotes.get(j)).content.contains(toFind.toUpperCase())
 								;
 						System.out.println(contain);
 								
@@ -95,12 +92,8 @@ public class Folder implements Comparable<Folder>{
 					continue;
 				else {
 					currentNotes.remove(j);
+					j--;
 				}
-				
-//				for(Note note:currentNotes) {
-//					System.out.print(note + " ");
-//				}
-//				System.out.println("");
 			}
 			i++;
 			
@@ -110,7 +103,11 @@ public class Folder implements Comparable<Folder>{
 
 	@Override
 	public boolean equals(Object obj) {
-		if(!(obj instanceof Note))
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
 			return false;
 		Folder other = (Folder) obj;
 		if (name == null) {
