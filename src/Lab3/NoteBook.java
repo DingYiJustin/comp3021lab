@@ -41,7 +41,7 @@ public class NoteBook {
 		List<Note> returnValue = new ArrayList<Note>();
 		for(Folder folder: folders) {
 			returnValue.addAll(folder.searchNotes(keywords));
-			//for(Note note: )
+			
 		}
 		return returnValue;
 	}

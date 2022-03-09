@@ -60,14 +60,9 @@ public class Folder implements Comparable<Folder>{
 			}
 			
 			//remove not searching notes
-			for(String string: currentStringsToFind) {
-			System.out.print(string+" ");
-			}
-			System.out.println("");
 			for(int j = 0; j<currentNotes.size(); j++) {
 				boolean contain = false;
 				if(currentNotes.get(j) instanceof ImageNote) {
-					System.out.println(currentNotes.get(j).getTitle());
 					for(String toFind : currentStringsToFind) {
 							contain = (currentNotes.get(j).getTitle().toLowerCase()).contains(toFind); 
 							if(contain)
@@ -76,12 +71,9 @@ public class Folder implements Comparable<Folder>{
 				}
 				else {
 					for(String toFind : currentStringsToFind) {
-						System.out.println(currentNotes.get(j));
-						System.out.println(toFind);
 						contain = (currentNotes.get(j).getTitle().toLowerCase()).contains(toFind) || 
 								(((TextNote)currentNotes.get(j)).content.toLowerCase()).contains(toFind)
 								;
-						System.out.println(contain);
 								
 						if(contain)
 							break;

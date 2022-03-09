@@ -2,9 +2,9 @@ package Lab3;
 import java.util.ArrayList;
 import java.util.List;
 
-import base.Folder;
-import base.Note;
-import base.NoteBook;
+import Lab3.Folder;
+import Lab3.Note;
+import Lab3.NoteBook;
 
 public class testLab3 {
 	public static void main(String args[]){
